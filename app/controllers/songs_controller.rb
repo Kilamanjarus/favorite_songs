@@ -13,12 +13,29 @@ class SongsController < ApplicationController
   end
 
   def create
-    song = Song.new(title: "The Safety Dance", albunm: "Rhythm of Youth", artist: "Men Without Hats", year: "1982")
+    song = Song.new(
+      title: params[:title],
+      albunm: params[:albunm],
+      artist: params[:artist],
+      year: params[:year],
+    )
     song.save
     # render json: { message: "2/3" }
   end
 
   def update
-    render json: { message: "getting this habbit now" }
+    song = Song.find_by(id: params[:id])
+    song.title = params[:title]
+    song.albunm = params[:albunm]
+    song.artist = params[:artist]
+    song.year = params[:year]
+    song.save
+    # render json: { message: "getting this habbit now" }
+  end
+
+  def destroy
+    song = Song.find_by(id: params[:id])
+    song.delete
+    # render json: { message: "Id say itsa habbit" }
   end
 end

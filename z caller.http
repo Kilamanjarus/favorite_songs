@@ -5,3 +5,24 @@ get http://localhost:3000/my_songs/2
 
 ###
 post http://localhost:3000/my_songs
+Content-Type: application/json
+
+{
+  "title": "Dance, Dance",
+  "albunm": "From Under the Cork Tree",
+  "artist": "Fall Out Boy",
+  "year": 2005
+}
+
+###
+patch http://localhost:3000/my_songs/1
+Content-Type: application/json
+
+{
+  "title": "Bye Bye Bye",
+  "albunm": "No Strings Attached",
+  "artist": "NSYNC",
+  "year": 2000
+}
+
+delete http://localhost:3000/my_songs/8

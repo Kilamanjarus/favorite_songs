@@ -1,1 +1,7 @@
 get http://localhost:3000/my_songs
+
+###
+get http://localhost:3000/my_songs/2
+
+###
+post http://localhost:3000/my_songs
